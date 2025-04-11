@@ -1,0 +1,59 @@
+import React, { useState } from 'react'
+
+function AddBookForm() {
+  const [inputs, setInputs] = useState({})
+  const [showForm, setShowForm] = useState(true);
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setInputs({});
+    setShowForm(false);
+    console.log(inputs); //show that in main page
+  }
+  return (
+    <>
+    {showForm && (
+    <form onSubmit={handleSubmit}>
+      <label>Title of the book: </label>
+      <input 
+      type='text'
+      name = "title"
+      value={inputs.title ||""}
+      onChange={handleChange}
+      ></input>
+
+      <label>Author: </label>
+      <input 
+      type='text'
+      name = "author"
+      value={inputs.author ||""}
+      onChange={handleChange}
+      ></input>
+      
+      <label>Genre: </label>
+      <input 
+      type='text'
+      name = "genre"
+      value={inputs.genre ||""}
+      onChange={handleChange}
+      ></input>
+      <label>Year of Publishing: </label>
+      <input 
+      type='number'
+      name = "year"
+      value={inputs.year ||""}
+      onChange={handleChange}
+      ></input>
+      <input type="submit" />
+    </form>
+    )}
+    </>
+  )
+}
+
+export default AddBookForm
