@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// import addNewBookDb from ''
 
 function AddBookForm() {
   const [inputs, setInputs] = useState({})
@@ -9,10 +10,31 @@ function AddBookForm() {
     setInputs(values => ({...values, [name]: value}))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setInputs({});
-    setShowForm(false);
+    console.log(inputs);
+
+    try{
+        const response = await fetch('http://localhost:8000/book',{
+          method:"POST",
+          headers:{
+            "content-Type":"application/json"
+          },
+          body:JSON.stringify(inputs)
+        });
+        if (response.ok){
+          console.log("Books added succesfully")
+          setInputs({});
+          setShowForm(false);
+        }
+        else{
+          console.error("Failed to add books")
+        }
+
+    }
+    catch(error){
+      console.error("Error",error)
+    }
     console.log(inputs); //show that in main page
   }
   return (
