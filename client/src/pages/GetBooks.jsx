@@ -32,7 +32,7 @@ function GetBooks() {
             method:'DELETE'
         });
         if(res.ok){
-            setBooks(books.filter(book => book.id !== id))
+            setBooks(books.filter(book => book._id !== id))
             console.log(books);
         }
         else{

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-// import addNewBookDb from ''
+import { useNavigate } from 'react-router-dom';
 
 function AddBookForm() {
+  const navigate = useNavigate();
   const [inputs, setInputs] = useState({})
   const [showForm, setShowForm] = useState(true);
   const handleChange = (event) => {
@@ -26,6 +27,7 @@ function AddBookForm() {
           console.log("Books added succesfully")
           setInputs({});
           setShowForm(false);
+          navigate("/")
         }
         else{
           console.error("Failed to add books")
