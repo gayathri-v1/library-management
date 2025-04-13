@@ -16,7 +16,7 @@ const Book = mongoose.model("Book",bookSchema)
 const getAllBooks = async()=>{
     return await Book.find();
 }
-getOneBook = async(id)=>{
+const getOneBook = async(id)=>{
     return await Book.findById(id)
 }
 

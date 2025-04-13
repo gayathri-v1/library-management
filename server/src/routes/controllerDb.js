@@ -52,4 +52,4 @@ const deleteBookDb = async(req, res) =>{
     }
 }
 
-module. exports = {deleteBookDb,addNewBookDb,updateBookDb,getAllBooksDb,getOneBookDb}
+module.exports = {deleteBookDb,addNewBookDb,updateBookDb,getAllBooksDb,getOneBookDb}

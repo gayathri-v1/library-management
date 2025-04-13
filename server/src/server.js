@@ -17,7 +17,7 @@ app.use(express.json());
 
 // Routes
 app.use("/book", bookRouter);
-app.options('*', cors());
+// app.options('*', cors());
 app.get("/", (req, res) => {
   res.status(200).send("Hello Books");
 });
