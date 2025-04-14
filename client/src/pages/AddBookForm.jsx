@@ -5,6 +5,7 @@ function AddBookForm() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({})
   const [showForm, setShowForm] = useState(true);
+  
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -69,8 +70,8 @@ function AddBookForm() {
       <label>Year of Publishing: </label>
       <input 
       type='number'
-      name = "year"
-      value={inputs.year ||""}
+      name = "yearOfPublishing"
+      value={inputs.yearOfPublishing ||""}
       onChange={handleChange}
       ></input>
       <input type="submit" />

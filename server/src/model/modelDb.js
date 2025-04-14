@@ -7,7 +7,7 @@ const bookSchema = new Schema({
   title: String,
   author: String,
   genre: String,
-  yearOfPublishing: Date,
+  yearOfPublishing: Number,
 });
 
 const Book = mongoose.model("Book",bookSchema) 

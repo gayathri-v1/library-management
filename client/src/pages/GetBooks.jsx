@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import FindBookById from './FindBookById';
 
 function GetBooks() {
     const [books, setBooks] = useState([]);
     const navigate = useNavigate();
     
+    
     useEffect(()=>{
             fetch('http://localhost:8000/book')
             .then(res => res.json())
             .then(data => {
-                console.log("Fetched data 👇👇");
+                
                 console.log(data); // 👈 see exactly what you're getting
                 console.log("Type of data:", typeof data);
 
@@ -47,17 +49,20 @@ const goToAddBookForm = ()=>{
     navigate("/add");
 }
 
+
   return (
     <div>
       <h3>Books available in the library</h3>
+      <FindBookById />
       <button onClick={goToAddBookForm}>Add books</button>
+      
       <ul>
       {
         books.map(book =>(
             
             <li key={book._id}>
                 <strong>{book.title} </strong> by {book.author} ({book.yearOfPublishing}) - {book.genre}
-                {/* <button onClick={}>Edit</button> */}
+                <button onClick={() => navigate(`/edit/${book._id}`)}>Edit</button>
                 <button onClick={()=> handleDelete(book._id)}>Delete</button>
             </li>
             
