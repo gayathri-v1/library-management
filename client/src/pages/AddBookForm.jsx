@@ -43,13 +43,14 @@ function AddBookForm() {
   return (
     <>
     {showForm && (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='bg-pink-200 p-20 flex flex-col w-2xl ml-110 mt-50'>
       <label>Title of the book: </label>
       <input 
       type='text'
       name = "title"
       value={inputs.title ||""}
       onChange={handleChange}
+      className='bg-white'
       ></input>
 
       <label>Author: </label>
@@ -58,6 +59,7 @@ function AddBookForm() {
       name = "author"
       value={inputs.author ||""}
       onChange={handleChange}
+      className='bg-white'
       ></input>
       
       <label>Genre: </label>
@@ -66,6 +68,7 @@ function AddBookForm() {
       name = "genre"
       value={inputs.genre ||""}
       onChange={handleChange}
+      className='bg-white'
       ></input>
       <label>Year of Publishing: </label>
       <input 
@@ -73,8 +76,11 @@ function AddBookForm() {
       name = "yearOfPublishing"
       value={inputs.yearOfPublishing ||""}
       onChange={handleChange}
+      className='bg-white'
       ></input>
-      <input type="submit" />
+      <button type="submit" 
+        className='p-1.5 mt-2'
+      >Submit</button>
     </form>
     )}
     </>

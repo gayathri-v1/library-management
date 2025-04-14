@@ -51,8 +51,10 @@ const goToAddBookForm = ()=>{
 
 
   return (
-    <div>
-      <h3>Books available in the library</h3>
+    <div className='p-20'>
+
+    <div className='bg-blue p-10 ml-70 gap-5 flex flex-col '>
+      <h2 className='text-4xl'>Books available in the library</h2>
       <FindBookById />
       <button onClick={goToAddBookForm}>Add books</button>
       
@@ -60,7 +62,7 @@ const goToAddBookForm = ()=>{
       {
         books.map(book =>(
             
-            <li key={book._id}>
+            <li key={book._id} className='flex flex-row gap-3 bg-white p-10'>
                 <strong>{book.title} </strong> by {book.author} ({book.yearOfPublishing}) - {book.genre}
                 <button onClick={() => navigate(`/edit/${book._id}`)}>Edit</button>
                 <button onClick={()=> handleDelete(book._id)}>Delete</button>
@@ -70,6 +72,7 @@ const goToAddBookForm = ()=>{
         )) 
       }
       </ul>
+    </div>
     </div>
   )
 }

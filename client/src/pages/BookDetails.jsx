@@ -20,7 +20,7 @@ function BookDetails() {
     },[id]);
     if (!book) return <p>Loading or book not found...</p>;
   return (
-    <div>
+    <div className='bg-white p-10 rounded ml-150 mt-70'>
       <h4>{book.title}</h4>
       <p>{book.author}</p>
       <p>{book.genre}</p>

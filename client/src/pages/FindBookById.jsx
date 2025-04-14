@@ -17,11 +17,12 @@ function FindBookById() {
         }   
     }
   return (
-    <form onSubmit={handleSearch}>
+    <form onSubmit={handleSearch} className='flex flex-row gap-3'>
         <label>Search book</label>
         <input type='text'
             value={query}
             onChange={(e)=>setQuery(e.target.value)}
+            className='bg-white'
         />
         <button type='submit'>search</button>
       </form>

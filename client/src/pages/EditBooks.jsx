@@ -43,7 +43,7 @@ function EditBooks() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='bg-pink-200 p-20 flex flex-col w-2xl ml-110 mt-50'>
     <h2>Edit Book</h2>
     <label>Title of the book: </label>
     <input 
@@ -51,6 +51,7 @@ function EditBooks() {
       name = "title"
       value={inputs.title ||""}
       onChange={handleChange}
+      className='bg-white'
       ></input>
     <label>Author: </label>
     <input 
@@ -58,6 +59,7 @@ function EditBooks() {
       name = "author"
       value={inputs.author ||""}
       onChange={handleChange}
+      className='bg-white'
       >
 
       </input>
@@ -67,6 +69,7 @@ function EditBooks() {
       name = "genre"
       value={inputs.genre ||""}
       onChange={handleChange}
+      className='bg-white'
       ></input>
     <label>Year of Publishing: </label>
     <input 
@@ -74,8 +77,9 @@ function EditBooks() {
       name = "yearOfPublishing"
       value={inputs.yearOfPublishing ||""}
       onChange={handleChange}
+      className='bg-white'
       ></input>
-      <button type="submit">Update </button>
+      <button type="submit" className='p-1.5 mt-2'>Update </button>
     
 
     </form>
