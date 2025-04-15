@@ -10,7 +10,7 @@ const bookSchema = new Schema({
   yearOfPublishing: Number,
 });
 
-const Book = mongoose.model("Book",bookSchema) 
+const BookNew = mongoose.model("BookNew",bookSchema) 
 //create the services
 
 const getAllBooks = async()=>{
